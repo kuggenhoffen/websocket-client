@@ -326,8 +326,6 @@ class WebSocket(object):
         """
         while True:
             frame = self.recv_frame()
-            if not self.connected:
-                raise WebSocketConnectionClosedException("Connection was closed")
             if not frame:
                 # handle error:
                 # 'NoneType' object has no attribute 'opcode'
